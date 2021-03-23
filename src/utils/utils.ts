@@ -70,6 +70,7 @@ export const saveUserData = async (access_token: string): Promise<void> => {
   const tokenExpireDate = getNowDate.setDate(getNowDate.getDate() + 1);
   saveAccessTokenToStorage(access_token);
   saveTokenExpireToStorage(`${tokenExpireDate}`);
+  checkAccessToken();
 };
 
 export const checkAccessToken = (): void => {
